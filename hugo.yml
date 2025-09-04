@@ -1,4 +1,4 @@
-baseURL: https://MetronLee.github.io/
+baseURL: "https://MetronLee.github.io/blog"
 languageCode: en-us
 title: My blog
 theme: PaperMod
