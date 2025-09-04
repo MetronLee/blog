@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>My blog</title>
-    <link>https://MetronLee.github.io/</link>
+    <link>https://MetronLee.github.io/blog/</link>
     <description>Recent content on My blog</description>
     <generator>Hugo -- 0.149.0</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 04 Sep 2025 15:33:03 +0800</lastBuildDate>
-    <atom:link href="https://MetronLee.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://MetronLee.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tmp</title>
-      <link>https://MetronLee.github.io/docs/tmp/</link>
+      <link>https://MetronLee.github.io/blog/docs/tmp/</link>
       <pubDate>Thu, 04 Sep 2025 15:33:03 +0800</pubDate>
-      <guid>https://MetronLee.github.io/docs/tmp/</guid>
+      <guid>https://MetronLee.github.io/blog/docs/tmp/</guid>
       <description>&lt;h1 id=&#34;this-is-a-test-page&#34;&gt;This is a test page&lt;/h1&gt;
 &lt;p&gt;Test.&lt;/p&gt;</description>
     </item>
