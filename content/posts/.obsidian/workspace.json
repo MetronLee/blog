@@ -1,0 +1,205 @@
+{
+  "main": {
+    "id": "9d187e469a590eec",
+    "type": "split",
+    "children": [
+      {
+        "id": "ae8618949f820798",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9cd42ba3a2409d71",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "我是如何搭建此博客的.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "我是如何搭建此博客的"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d9d3e0b8b7866ebc",
+    "type": "split",
+    "children": [
+      {
+        "id": "4cbffaf4c91e0707",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "91b261b16d87bd95",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "53554a47b6f35ede",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "5c4db2a08ce8c92b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "720a14b719264f15",
+    "type": "split",
+    "children": [
+      {
+        "id": "6e7ab32c962aa62e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5e60bcd185a74696",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "c51101bb74db687a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "77321dae856c0a5d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "18cbf3083168784d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "vim-toggle:Toggle Vim Mode": false
+    }
+  },
+  "active": "9cd42ba3a2409d71",
+  "lastOpenFiles": [
+    "obs_scripts/template.md",
+    "obs_scripts/NewBlog.js",
+    "obs_scripts",
+    "2025-09-06_ddd/ddd.md",
+    "2025-09-06_nihao/nihao.md",
+    "2025-09-06_abc/abc.md",
+    "2025-09-06_ddd",
+    "2025-09-06_ab/ab.md",
+    "2025-09-06_abc",
+    "2025-09-06_anotherblog/anotherblog.md",
+    "2025-09-06_ab",
+    "2025-09-06_another/another.md",
+    "2025-09-06_anotherblog",
+    "2025-09-06_another",
+    "tmp2 1.md",
+    "tmp2.md",
+    "我是如何搭建此博客的.md",
+    "2025-09-06_nihao",
+    "2025-09-06-hello.md",
+    "2025-09-06_asljkf/asljkf.md",
+    "2025-09-06_asldfjkas/asldfjkas.md",
+    "2025-09-06_asljkf",
+    "2025-09-06_aslkdjfas/aslkdjfas.md",
+    "2025-09-06_asldfjkas",
+    "_templates/template.md",
+    "2025-09-06_hello/hello.md",
+    "2025-09-06_nihao/nihao1.md",
+    "2025-09-06_slug/slug1.md",
+    "2025-09-06_slug/slug.md",
+    "obs_sctipts/NewBlog.js.md",
+    "obs_sctipts/template.md",
+    "template.md"
+  ]
+}

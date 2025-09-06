@@ -1,4 +1,72 @@
 baseURL: "https://MetronLee.github.io/blog"
 languageCode: en-us
 title: My blog
-theme: PaperMod
+theme: ["hugo-admonitions", "PaperModX"]
+
+
+ignoreFiles:
+  - "content/posts/obs_scripts/.*"
+
+params:
+  author: Metron Lee
+  favicon: favicon.ico
+  homeInfoParams:
+    Title: "Hello Stranger"
+    Content: >
+      👋 Welcome to my blog. It is boring as hell.
+
+      - [**About me**](https://github.com/MetronLee)
+      
+  socialIcons:
+    - name: github
+      title: View Source on Github
+      url: 'https://github.com/MetronLee/blog/'
+    - name: email
+      url: email
+    - name: linkedin
+      url: "https://www.linkedin.com/in/meicong-li-7358bb373/"
+
+  cover:
+    linkFullImages: true
+
+  # theme params
+  ShowBreadCrumbs: true
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowWordCount: true
+  ShowCodeCopyButtons: true
+  ShowPostNavLinks: true # PREVIOUS/NEXT PAGE on the bottom
+  showToc: true # Enables the Table of Contents
+  TocOpen: true # Opens the ToC by default (optional)
+  TocSide: 'right'
+  Email: metronlee@outlook.com
+
+menu:
+  main:
+    - name: Archive
+      url: archives/
+      weight: 5
+    - name: Search
+      url: search/
+      weight: 10
+    - name: Tags
+      url: tags/
+      weight: 20
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 30
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: dracula
+    lineNos: false
+    noClasses: false

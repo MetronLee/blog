@@ -1,0 +1,19 @@
+# Hugo 构建输出目录（最终生成的网站文件）
+/public/
+
+# Hugo 构建缓存
+/resources/_gen/
+
+# 临时文件、系统文件
+.DS_Store
+Thumbs.db
+
+# 本地 IDE/编辑器文件
+.vscode/
+.idea/
+*.swp
+*~
+
+# 日志或备份
+*.log
+*.bak
