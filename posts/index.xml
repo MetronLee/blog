@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on My blog</title>
+    <title>Posts on Metron&#39;s Blog</title>
     <link>https://MetronLee.github.io/blog/posts/</link>
-    <description>Recent content in Posts on My blog</description>
+    <description>Recent content in Posts on Metron&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 04 Sep 2025 15:33:03 +0800</lastBuildDate><atom:link href="https://MetronLee.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -108,9 +108,9 @@ tags: []
 <li>UVR5 人声增强</li>
 <li>* Audacity 降噪</li>
 <li>Whisper 转录</li>
-<li>LyricsX 滚动显示转录稿
-的工作流，由于过程实在太累，所以想把它记下来，同时建立起博客以便学习其他东西。，</li>
+<li>LyricsX 滚动显示转录稿</li>
 </ol>
+<p>的工作流，由于过程实在太累，所以想把它记下来，同时建立起博客以便学习其他东西。</p>
 ]]></content:encoded>
     </item>
     
