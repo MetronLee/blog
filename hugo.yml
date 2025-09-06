@@ -1,6 +1,6 @@
 baseURL: "https://MetronLee.github.io/blog"
 languageCode: en-us
-title: My blog
+title: Metron's Blog
 theme: ["hugo-admonitions", "PaperModX"]
 
 
@@ -15,7 +15,8 @@ params:
     Content: >
       👋 Welcome to my blog. It is boring as hell.
 
-      - [**About me**](https://github.com/MetronLee)
+
+      [*About me*](https://github.com/MetronLee)
       
   socialIcons:
     - name: github
@@ -32,13 +33,16 @@ params:
   # theme params
   ShowBreadCrumbs: true
   ShowReadingTime: true
-  ShowShareButtons: true
+  # ShowShareButtons: true
+  # ShareButtons: ["whatsapp",]
   ShowWordCount: true
   ShowCodeCopyButtons: true
+  socialLinks: true
   ShowPostNavLinks: true # PREVIOUS/NEXT PAGE on the bottom
   showToc: true # Enables the Table of Contents
   TocOpen: true # Opens the ToC by default (optional)
   TocSide: 'right'
+  noComments: true
   Email: metronlee@outlook.com
 
 menu:
