@@ -11,10 +11,11 @@
 <meta name="description" content="">
 <meta name="author" content="Metron Lee">
 <link rel="canonical" href="https://MetronLee.github.io/blog/">
-<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.24117e94f7185554bf370e131546657a05d72834bf02c67c2a4215d5cf110a80.css" integrity="sha256-JBF&#43;lPcYVVS/Nw4TFUZlegXXKDS/AsZ8KkIV1c8RCoA=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.2af6831d54073523edeeee9ef8f6806a78b9f8f65b09a9041425f0b3c0dbe3c0.css" integrity="sha256-KvaDHVQHNSPt7u6e&#43;PaAani5&#43;PZbCakEFCXws8Db48A=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://MetronLee.github.io/blog/favicon.ico">
 <link rel="apple-touch-icon" href="https://MetronLee.github.io/blog/apple-touch-icon.png">
 <link rel="alternate" type="application/rss+xml" href="https://MetronLee.github.io/blog/index.xml">
+<link rel="alternate" type="application/json" href="https://MetronLee.github.io/blog/index.json">
 <link rel="alternate" hreflang="en" href="https://MetronLee.github.io/blog/">
 
 <meta name="twitter:title" content="My blog" />
@@ -251,18 +252,18 @@ function toggleThemeListener() {
   <section class="entry-content">
     
       <p>Hugo on Github Pages via Github Actions 教程
-使用了 PageModX 主题，因为可以在侧边栏显示目录。在 hugo.yml 中的 params 添加以下参数：
-params: showToc: true # Enables the Table of Contents TocOpen: true # Opens the ToC by default (optional) TocSide: &#39;right&#39; 图床 教程
-Cloudflare R2 存图 &#43; WebP Cloud 处理图片 &#43; PicGo 自动上传
-Obsidian QuickAdd [!warning] Strings in Template File 一定要用双引号，因为单引号会被 Obsidian 在保存文件时自动去除，导致 Hugo 无法解析。 虽然貌似 yml 中字符串不需要引号，但是我也不清楚内部机理，反正能跑就行（
---- draft: true date: &#34;{{DATE:YYYY-MM-DD}}T{{TIME:HH:mm:ss}}&#43;08:00&#34; title: &#34;{{VALUE:articleTitle}}&#34; slug: description: categories: [] tags: [] --- </p>
+Hugo Themes PageModX 使用了 PageModX 主题，因为可以在侧边栏显示目录。在 hugo.yml 中的 params 添加以下参数：
+params: showToc: true # Enables the Table of Contents TocOpen: true # Opens the ToC by default (optional) TocSide: &#39;right&#39; 几年没维护了，官方的安装教程已经失效（所用 Github Actions 已被弃用），遂 git clone。然而配置文件也很难配，官方给的模板也很让人头大🤕
+代码块渲染出问题了，有黑色四角 Gemini CLI &#43; 各种奇思妙想花了好久才解决😭😡😭😡😭。解决方案是在 hugo.yml 里面加了这些东西：
+outputs: home: - HTML - RSS - JSON markup: goldmark: renderer: unsafe: true highlight: style: dracula lineNos: false noClasses: false Hugo-admonitions Git仓库
+...</p>
     
   </section>
   <footer class="entry-footer"><span class="meta-item">
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
   <span>September 4, 2025</span></span><span class="meta-item">
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text" style="user-select: text;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" style="user-select: text;"></path><polyline points="14 2 14 8 20 8" style="user-select: text;"></polyline><line x1="16" y1="13" x2="8" y2="13" style="user-select: text;"></line><line x1="16" y1="17" x2="8" y2="17" style="user-select: text;"></line><polyline points="10 9 9 9 8 9" style="user-select: text;"></polyline></svg>
-  <span>76 words</span></span><span class="meta-item">
+  <span>165 words</span></span><span class="meta-item">
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 15"></polyline></svg>
   <span>1 min</span></span>
 </footer>

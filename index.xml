@@ -15,43 +15,77 @@
       <guid>https://MetronLee.github.io/blog/posts/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E6%AD%A4%E5%8D%9A%E5%AE%A2%E7%9A%84/</guid>
       <description>&lt;h1 id=&#34;hugo-on-github-pages-via-github-actions&#34;&gt;Hugo on Github Pages via Github Actions&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=_QSr2_pxIJs&#34;&gt;教程&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;hugo-themes&#34;&gt;Hugo Themes&lt;/h1&gt;
+&lt;h3 id=&#34;pagemodx&#34;&gt;PageModX&lt;/h3&gt;
 &lt;p&gt;使用了 PageModX 主题，因为可以在侧边栏显示目录。在 &lt;code&gt;hugo.yml&lt;/code&gt; 中的 &lt;code&gt;params&lt;/code&gt; 添加以下参数：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-hugo.yml&#34; data-lang=&#34;hugo.yml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;params&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;showToc&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# Enables the Table of Contents&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;TocOpen&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# Opens the ToC by default (optional)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;TocSide&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;right&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;图床&#34;&gt;图床&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://sspai.com/post/90170&#34;&gt;教程&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Cloudflare R2 存图 + WebP Cloud 处理图片 + PicGo 自动上传&lt;/p&gt;
-&lt;h1 id=&#34;obsidian-quickadd&#34;&gt;Obsidian QuickAdd&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;[!warning] Strings in Template File
-一定要用双引号，因为单引号会被 Obsidian 在保存文件时自动去除，导致 Hugo 无法解析。
-虽然貌似 yml 中字符串不需要引号，但是我也不清楚内部机理，反正能跑就行（&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;---
-draft: true
-date: &amp;#34;{{DATE:YYYY-MM-DD}}T{{TIME:HH:mm:ss}}+08:00&amp;#34;
-title: &amp;#34;{{VALUE:articleTitle}}&amp;#34;
-slug:
-description:
-categories: []
-tags: []
----
-&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-YAML&#34; data-lang=&#34;YAML&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;showToc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Enables the Table of Contents&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;TocOpen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;c&#34;&gt;# Opens the ToC by default (optional)&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;TocSide&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;right&amp;#39;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;几年没维护了，官方的安装教程已经失效（所用 Github Actions 已被弃用），遂 &lt;code&gt;git clone&lt;/code&gt;。然而配置文件也很难配，官方给的模板也很让人头大🤕&lt;/p&gt;
+&lt;p&gt;代码块渲染出问题了，有黑色四角
+  &lt;img loading=&#34;lazy&#34; src=&#34;https://img.metron.top/20250906/1757153502_Screenshot%202025-09-06%20at%204.08.00%E2%80%AFPM.png&#34; alt=&#34;Screenshot 2025-09-06 at 4.08.00 PM.png&#34;  /&gt;
+Gemini CLI + 各种奇思妙想花了好久才解决😭😡😭😡😭。解决方案是在 &lt;code&gt;hugo.yml&lt;/code&gt;  里面加了这些东西：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-hugo.yml&#34; data-lang=&#34;hugo.yml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;outputs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;home&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;HTML&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;RSS&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;markup&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;goldmark&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;renderer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;      &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;unsafe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;highlight&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;style&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;dracula&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;lineNos&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;noClasses&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;hugo-admonitions&#34;&gt;Hugo-admonitions&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/KKKZOZ/hugo-admonitions&#34;&gt;Git仓库&lt;/a&gt;&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h1 id="hugo-on-github-pages-via-github-actions">Hugo on Github Pages via Github Actions</h1>
 <p><a href="https://www.youtube.com/watch?v=_QSr2_pxIJs">教程</a></p>
+<h1 id="hugo-themes">Hugo Themes</h1>
+<h3 id="pagemodx">PageModX</h3>
 <p>使用了 PageModX 主题，因为可以在侧边栏显示目录。在 <code>hugo.yml</code> 中的 <code>params</code> 添加以下参数：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hugo.yml" data-lang="hugo.yml"><span style="display:flex;"><span><span style="color:#f92672">params</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">showToc</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># Enables the Table of Contents</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">TocOpen</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># Opens the ToC by default (optional)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">TocSide</span>: <span style="color:#e6db74">&#39;right&#39;</span>
-</span></span></code></pre></div><h1 id="图床">图床</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-YAML" data-lang="YAML"><span class="line"><span class="cl"><span class="nt">params</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">showToc</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c"># Enables the Table of Contents</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">TocOpen</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c"># Opens the ToC by default (optional)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">TocSide</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;right&#39;</span><span class="w">
+</span></span></span></code></pre></div><p>几年没维护了，官方的安装教程已经失效（所用 Github Actions 已被弃用），遂 <code>git clone</code>。然而配置文件也很难配，官方给的模板也很让人头大🤕</p>
+<p>代码块渲染出问题了，有黑色四角
+  <img loading="lazy" src="https://img.metron.top/20250906/1757153502_Screenshot%202025-09-06%20at%204.08.00%E2%80%AFPM.png" alt="Screenshot 2025-09-06 at 4.08.00 PM.png"  />
+Gemini CLI + 各种奇思妙想花了好久才解决😭😡😭😡😭。解决方案是在 <code>hugo.yml</code>  里面加了这些东西：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-hugo.yml" data-lang="hugo.yml"><span class="line"><span class="cl"><span class="nt">outputs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">home</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">HTML</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">RSS</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">JSON</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">markup</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">goldmark</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">renderer</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">unsafe</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">highlight</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l">dracula</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">lineNos</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">noClasses</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span></code></pre></div><h3 id="hugo-admonitions">Hugo-admonitions</h3>
+<p><a href="https://github.com/KKKZOZ/hugo-admonitions">Git仓库</a></p>
+<p>用来渲染 Obsidian 的 Callout 的，效果不错</p>
+<p>
+  <img loading="lazy" src="https://img.metron.top/20250906/1757152353_Screenshot%202025-09-06%20at%205.52.30%E2%80%AFPM.png" alt="Screenshot 2025-09-06 at 5.52.30 PM"  /></p>
+<h1 id="图床">图床</h1>
 <p><a href="https://sspai.com/post/90170">教程</a></p>
-<p>Cloudflare R2 存图 + WebP Cloud 处理图片 + PicGo 自动上传</p>
+<p>Cloudflare R2 存图 + WebP Cloud 处理图片 + PicGo 自动上传，很棒啊很棒👍</p>
+<h3 id="picgo">PicGo</h3>
+<p>MacOS 用户如果喜欢截图后显示 floating thumbnail 的话记得给 PicGo 开启全盘读取权限，才能拖拽 thumbnail 上传。</p>
+<p>教程中 Amazon S3 插件的“自定义域名”已经改成了“自定义URL输出模板”，设成<code>https://img.example.com/{path}</code>就好。变量详见<a href="https://github.com/wayjam/picgo-plugin-s3">插件官网</a>.</p>
 <h1 id="obsidian-quickadd">Obsidian QuickAdd</h1>
-<blockquote>
-<p>[!warning] Strings in Template File
-一定要用双引号，因为单引号会被 Obsidian 在保存文件时自动去除，导致 Hugo 无法解析。
+
+    <div class="admonition warning">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480L40 480c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24l0 112c0 13.3 10.7 24 24 24s24-10.7 24-24l0-112c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>
+        <span>Strings in Template File</span>
+      </div>
+      <div class="admonition-content">
+        <p>一定要用双引号，因为单引号会被 Obsidian 在保存文件时自动去除，导致 Hugo 无法解析。
 虽然貌似 yml 中字符串不需要引号，但是我也不清楚内部机理，反正能跑就行（</p>
 <pre tabindex="0"><code>---
 draft: true
@@ -62,7 +96,21 @@ description:
 categories: []
 tags: []
 ---
-</code></pre></blockquote>
+</code></pre>
+      </div>
+    </div><p>另外，脚本和 template 是放在 <code>obs_scripts</code> 目录下的，而这个 obsidian 仓库是在 content 子目录下的，所以要在 <code>hugo.yml</code> 中把这个目录 ignore 了以免被 Hugo 处理：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-hugo.yml" data-lang="hugo.yml"><span class="line"><span class="cl"><span class="nt">ignoreFiles</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="s2">&#34;content/posts/obs_scripts/.*&#34;</span><span class="w">
+</span></span></span></code></pre></div><h1 id="后记">后记</h1>
+<p>为什么突然想搭一个博客呢……本来是上哲学课听不懂，于是录音以复习。因为有转录和人声增强的需求，所以花费了大量时间精力建立起</p>
+<ol>
+<li>ffmpeg loudnorm 标准化音量</li>
+<li>UVR5 人声增强</li>
+<li>* Audacity 降噪</li>
+<li>Whisper 转录</li>
+<li>LyricsX 滚动显示转录稿
+的工作流，由于过程实在太累，所以想把它记下来，同时建立起博客以便学习其他东西。，</li>
+</ol>
 ]]></content:encoded>
     </item>
     

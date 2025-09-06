@@ -9,32 +9,35 @@
 <meta name="keywords" content="">
 <meta name="description" content="Hugo on Github Pages via Github Actions
 教程
+Hugo Themes
+PageModX
 使用了 PageModX 主题，因为可以在侧边栏显示目录。在 hugo.yml 中的 params 添加以下参数：
 params:
   showToc: true # Enables the Table of Contents
   TocOpen: true # Opens the ToC by default (optional)
   TocSide: &#39;right&#39;
-图床
-教程
-Cloudflare R2 存图 &#43; WebP Cloud 处理图片 &#43; PicGo 自动上传
-Obsidian QuickAdd
-
-[!warning] Strings in Template File
-一定要用双引号，因为单引号会被 Obsidian 在保存文件时自动去除，导致 Hugo 无法解析。
-虽然貌似 yml 中字符串不需要引号，但是我也不清楚内部机理，反正能跑就行（
----
-draft: true
-date: &#34;{{DATE:YYYY-MM-DD}}T{{TIME:HH:mm:ss}}&#43;08:00&#34;
-title: &#34;{{VALUE:articleTitle}}&#34;
-slug:
-description:
-categories: []
-tags: []
----
-">
+几年没维护了，官方的安装教程已经失效（所用 Github Actions 已被弃用），遂 git clone。然而配置文件也很难配，官方给的模板也很让人头大🤕
+代码块渲染出问题了，有黑色四角
+  
+Gemini CLI &#43; 各种奇思妙想花了好久才解决😭😡😭😡😭。解决方案是在 hugo.yml  里面加了这些东西：
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: dracula
+    lineNos: false
+    noClasses: false
+Hugo-admonitions
+Git仓库">
 <meta name="author" content="Metron Lee">
 <link rel="canonical" href="https://MetronLee.github.io/blog/posts/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E6%AD%A4%E5%8D%9A%E5%AE%A2%E7%9A%84/">
-<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.24117e94f7185554bf370e131546657a05d72834bf02c67c2a4215d5cf110a80.css" integrity="sha256-JBF&#43;lPcYVVS/Nw4TFUZlegXXKDS/AsZ8KkIV1c8RCoA=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.min.2af6831d54073523edeeee9ef8f6806a78b9f8f65b09a9041425f0b3c0dbe3c0.css" integrity="sha256-KvaDHVQHNSPt7u6e&#43;PaAani5&#43;PZbCakEFCXws8Db48A=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://MetronLee.github.io/blog/favicon.ico">
 <link rel="apple-touch-icon" href="https://MetronLee.github.io/blog/apple-touch-icon.png">
 <link rel="alternate" hreflang="en" href="https://MetronLee.github.io/blog/posts/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E6%AD%A4%E5%8D%9A%E5%AE%A2%E7%9A%84/">
@@ -42,55 +45,61 @@ tags: []
 <meta name="twitter:title" content="我是如何搭建此博客的 | My blog" />
 <meta name="twitter:description" content="Hugo on Github Pages via Github Actions
 教程
+Hugo Themes
+PageModX
 使用了 PageModX 主题，因为可以在侧边栏显示目录。在 hugo.yml 中的 params 添加以下参数：
 params:
   showToc: true # Enables the Table of Contents
   TocOpen: true # Opens the ToC by default (optional)
   TocSide: &#39;right&#39;
-图床
-教程
-Cloudflare R2 存图 &#43; WebP Cloud 处理图片 &#43; PicGo 自动上传
-Obsidian QuickAdd
-
-[!warning] Strings in Template File
-一定要用双引号，因为单引号会被 Obsidian 在保存文件时自动去除，导致 Hugo 无法解析。
-虽然貌似 yml 中字符串不需要引号，但是我也不清楚内部机理，反正能跑就行（
----
-draft: true
-date: &#34;{{DATE:YYYY-MM-DD}}T{{TIME:HH:mm:ss}}&#43;08:00&#34;
-title: &#34;{{VALUE:articleTitle}}&#34;
-slug:
-description:
-categories: []
-tags: []
----
-" />
+几年没维护了，官方的安装教程已经失效（所用 Github Actions 已被弃用），遂 git clone。然而配置文件也很难配，官方给的模板也很让人头大🤕
+代码块渲染出问题了，有黑色四角
+  
+Gemini CLI &#43; 各种奇思妙想花了好久才解决😭😡😭😡😭。解决方案是在 hugo.yml  里面加了这些东西：
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: dracula
+    lineNos: false
+    noClasses: false
+Hugo-admonitions
+Git仓库" />
 <meta property="og:title" content="我是如何搭建此博客的 | My blog" />
 <meta property="og:description" content="Hugo on Github Pages via Github Actions
 教程
+Hugo Themes
+PageModX
 使用了 PageModX 主题，因为可以在侧边栏显示目录。在 hugo.yml 中的 params 添加以下参数：
 params:
   showToc: true # Enables the Table of Contents
   TocOpen: true # Opens the ToC by default (optional)
   TocSide: &#39;right&#39;
-图床
-教程
-Cloudflare R2 存图 &#43; WebP Cloud 处理图片 &#43; PicGo 自动上传
-Obsidian QuickAdd
-
-[!warning] Strings in Template File
-一定要用双引号，因为单引号会被 Obsidian 在保存文件时自动去除，导致 Hugo 无法解析。
-虽然貌似 yml 中字符串不需要引号，但是我也不清楚内部机理，反正能跑就行（
----
-draft: true
-date: &#34;{{DATE:YYYY-MM-DD}}T{{TIME:HH:mm:ss}}&#43;08:00&#34;
-title: &#34;{{VALUE:articleTitle}}&#34;
-slug:
-description:
-categories: []
-tags: []
----
-" />
+几年没维护了，官方的安装教程已经失效（所用 Github Actions 已被弃用），遂 git clone。然而配置文件也很难配，官方给的模板也很让人头大🤕
+代码块渲染出问题了，有黑色四角
+  
+Gemini CLI &#43; 各种奇思妙想花了好久才解决😭😡😭😡😭。解决方案是在 hugo.yml  里面加了这些东西：
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: dracula
+    lineNos: false
+    noClasses: false
+Hugo-admonitions
+Git仓库" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://MetronLee.github.io/blog/posts/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E6%AD%A4%E5%8D%9A%E5%AE%A2%E7%9A%84/" />
 <meta property="article:section" content="posts" />
@@ -124,11 +133,11 @@ tags: []
   "@type": "BlogPosting",
   "headline": "我是如何搭建此博客的 | My blog",
   "name": "我是如何搭建此博客的",
-  "description": "Hugo on Github Pages via Github Actions 教程\n使用了 PageModX 主题，因为可以在侧边栏显示目录。在 hugo.yml 中的 params 添加以下参数：\nparams: showToc: true # Enables the Table of Contents TocOpen: true # Opens the ToC by default (optional) TocSide: \u0026#39;right\u0026#39; 图床 教程\nCloudflare R2 存图 + WebP Cloud 处理图片 + PicGo 自动上传\nObsidian QuickAdd [!warning] Strings in Template File 一定要用双引号，因为单引号会被 Obsidian 在保存文件时自动去除，导致 Hugo 无法解析。 虽然貌似 yml 中字符串不需要引号，但是我也不清楚内部机理，反正能跑就行（\n--- draft: true date: \u0026#34;{{DATE:YYYY-MM-DD}}T{{TIME:HH:mm:ss}}+08:00\u0026#34; title: \u0026#34;{{VALUE:articleTitle}}\u0026#34; slug: description: categories: [] tags: [] --- ",
+  "description": "Hugo on Github Pages via Github Actions 教程\nHugo Themes PageModX 使用了 PageModX 主题，因为可以在侧边栏显示目录。在 hugo.yml 中的 params 添加以下参数：\nparams: showToc: true # Enables the Table of Contents TocOpen: true # Opens the ToC by default (optional) TocSide: \u0026#39;right\u0026#39; 几年没维护了，官方的安装教程已经失效（所用 Github Actions 已被弃用），遂 git clone。然而配置文件也很难配，官方给的模板也很让人头大🤕\n代码块渲染出问题了，有黑色四角 Gemini CLI + 各种奇思妙想花了好久才解决😭😡😭😡😭。解决方案是在 hugo.yml 里面加了这些东西：\noutputs: home: - HTML - RSS - JSON markup: goldmark: renderer: unsafe: true highlight: style: dracula lineNos: false noClasses: false Hugo-admonitions Git仓库\n",
   "keywords": [
     
   ],
-  "wordCount" : "76",
+  "wordCount" : "165",
   "inLanguage": "en",
   "datePublished": "2025-09-04T15:33:03+08:00",
   "dateModified": "2025-09-04T15:33:03+08:00",
@@ -318,7 +327,7 @@ function toggleThemeListener() {
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
   <span>September 4, 2025</span></span><span class="meta-item">
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text" style="user-select: text;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" style="user-select: text;"></path><polyline points="14 2 14 8 20 8" style="user-select: text;"></polyline><line x1="16" y1="13" x2="8" y2="13" style="user-select: text;"></line><line x1="16" y1="17" x2="8" y2="17" style="user-select: text;"></line><polyline points="10 9 9 9 8 9" style="user-select: text;"></polyline></svg>
-  <span>76 words</span></span><span class="meta-item">
+  <span>165 words</span></span><span class="meta-item">
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 15"></polyline></svg>
   <span>1 min</span></span>
 
@@ -335,9 +344,27 @@ function toggleThemeListener() {
                 <li>
                     <a href="#hugo-on-github-pages-via-github-actions" aria-label="Hugo on Github Pages via Github Actions">Hugo on Github Pages via Github Actions</a></li>
                 <li>
-                    <a href="#%e5%9b%be%e5%ba%8a" aria-label="图床">图床</a></li>
+                    <a href="#hugo-themes" aria-label="Hugo Themes">Hugo Themes</a><ul>
+                        <ul>
+                        
                 <li>
-                    <a href="#obsidian-quickadd" aria-label="Obsidian QuickAdd">Obsidian QuickAdd</a>
+                    <a href="#pagemodx" aria-label="PageModX">PageModX</a></li>
+                <li>
+                    <a href="#hugo-admonitions" aria-label="Hugo-admonitions">Hugo-admonitions</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#%e5%9b%be%e5%ba%8a" aria-label="图床">图床</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#picgo" aria-label="PicGo">PicGo</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#obsidian-quickadd" aria-label="Obsidian QuickAdd">Obsidian QuickAdd</a></li>
+                <li>
+                    <a href="#%e5%90%8e%e8%ae%b0" aria-label="后记">后记</a>
                 </li>
             </ul>
         </div>
@@ -346,18 +373,50 @@ function toggleThemeListener() {
 
   <div class="post-content"><h1 id="hugo-on-github-pages-via-github-actions">Hugo on Github Pages via Github Actions<a hidden class="anchor" aria-hidden="true" href="#hugo-on-github-pages-via-github-actions">¶</a></h1>
 <p><a href="https://www.youtube.com/watch?v=_QSr2_pxIJs">教程</a></p>
+<h1 id="hugo-themes">Hugo Themes<a hidden class="anchor" aria-hidden="true" href="#hugo-themes">¶</a></h1>
+<h3 id="pagemodx">PageModX<a hidden class="anchor" aria-hidden="true" href="#pagemodx">¶</a></h3>
 <p>使用了 PageModX 主题，因为可以在侧边栏显示目录。在 <code>hugo.yml</code> 中的 <code>params</code> 添加以下参数：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-hugo.yml" data-lang="hugo.yml"><span style="display:flex;"><span><span style="color:#f92672">params</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">showToc</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># Enables the Table of Contents</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">TocOpen</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># Opens the ToC by default (optional)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">TocSide</span>: <span style="color:#e6db74">&#39;right&#39;</span>
-</span></span></code></pre></div><h1 id="图床">图床<a hidden class="anchor" aria-hidden="true" href="#图床">¶</a></h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-YAML" data-lang="YAML"><span class="line"><span class="cl"><span class="nt">params</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">showToc</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c"># Enables the Table of Contents</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">TocOpen</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c"># Opens the ToC by default (optional)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">TocSide</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;right&#39;</span><span class="w">
+</span></span></span></code></pre></div><p>几年没维护了，官方的安装教程已经失效（所用 Github Actions 已被弃用），遂 <code>git clone</code>。然而配置文件也很难配，官方给的模板也很让人头大🤕</p>
+<p>代码块渲染出问题了，有黑色四角
+  <img loading="lazy" src="https://img.metron.top/20250906/1757153502_Screenshot%202025-09-06%20at%204.08.00%E2%80%AFPM.png" alt="Screenshot 2025-09-06 at 4.08.00 PM.png"  />
+Gemini CLI + 各种奇思妙想花了好久才解决😭😡😭😡😭。解决方案是在 <code>hugo.yml</code>  里面加了这些东西：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-hugo.yml" data-lang="hugo.yml"><span class="line"><span class="cl"><span class="nt">outputs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">home</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">HTML</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">RSS</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="l">JSON</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">markup</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">goldmark</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">renderer</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">unsafe</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">highlight</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">style</span><span class="p">:</span><span class="w"> </span><span class="l">dracula</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">lineNos</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">noClasses</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span></code></pre></div><h3 id="hugo-admonitions">Hugo-admonitions<a hidden class="anchor" aria-hidden="true" href="#hugo-admonitions">¶</a></h3>
+<p><a href="https://github.com/KKKZOZ/hugo-admonitions">Git仓库</a></p>
+<p>用来渲染 Obsidian 的 Callout 的，效果不错</p>
+<p>
+  <img loading="lazy" src="https://img.metron.top/20250906/1757152353_Screenshot%202025-09-06%20at%205.52.30%E2%80%AFPM.png" alt="Screenshot 2025-09-06 at 5.52.30 PM"  /></p>
+<h1 id="图床">图床<a hidden class="anchor" aria-hidden="true" href="#图床">¶</a></h1>
 <p><a href="https://sspai.com/post/90170">教程</a></p>
-<p>Cloudflare R2 存图 + WebP Cloud 处理图片 + PicGo 自动上传</p>
+<p>Cloudflare R2 存图 + WebP Cloud 处理图片 + PicGo 自动上传，很棒啊很棒👍</p>
+<h3 id="picgo">PicGo<a hidden class="anchor" aria-hidden="true" href="#picgo">¶</a></h3>
+<p>MacOS 用户如果喜欢截图后显示 floating thumbnail 的话记得给 PicGo 开启全盘读取权限，才能拖拽 thumbnail 上传。</p>
+<p>教程中 Amazon S3 插件的“自定义域名”已经改成了“自定义URL输出模板”，设成<code>https://img.example.com/{path}</code>就好。变量详见<a href="https://github.com/wayjam/picgo-plugin-s3">插件官网</a>.</p>
 <h1 id="obsidian-quickadd">Obsidian QuickAdd<a hidden class="anchor" aria-hidden="true" href="#obsidian-quickadd">¶</a></h1>
-<blockquote>
-<p>[!warning] Strings in Template File
-一定要用双引号，因为单引号会被 Obsidian 在保存文件时自动去除，导致 Hugo 无法解析。
+
+            <link rel="stylesheet" href="/blog/css/vendors/admonitions.4fd9a0b8ec8899f2ca952048d255a569f433f77dfb3f52f5bc87e7d65cdce449.css" integrity="sha256-T9mguOyImfLKlSBI0lWlafQz9337P1L1vIfn1lzc5Ek=" crossorigin="anonymous">
+    <div class="admonition warning">
+      <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480L40 480c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24l0 112c0 13.3 10.7 24 24 24s24-10.7 24-24l0-112c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>
+        <span>Strings in Template File</span>
+      </div>
+      <div class="admonition-content">
+        <p>一定要用双引号，因为单引号会被 Obsidian 在保存文件时自动去除，导致 Hugo 无法解析。
 虽然貌似 yml 中字符串不需要引号，但是我也不清楚内部机理，反正能跑就行（</p>
 <pre tabindex="0"><code>---
 draft: true
@@ -368,12 +427,27 @@ description:
 categories: []
 tags: []
 ---
-</code></pre></blockquote>
+</code></pre>
+      </div>
+    </div><p>另外，脚本和 template 是放在 <code>obs_scripts</code> 目录下的，而这个 obsidian 仓库是在 content 子目录下的，所以要在 <code>hugo.yml</code> 中把这个目录 ignore 了以免被 Hugo 处理：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-hugo.yml" data-lang="hugo.yml"><span class="line"><span class="cl"><span class="nt">ignoreFiles</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="s2">&#34;content/posts/obs_scripts/.*&#34;</span><span class="w">
+</span></span></span></code></pre></div><h1 id="后记">后记<a hidden class="anchor" aria-hidden="true" href="#后记">¶</a></h1>
+<p>为什么突然想搭一个博客呢……本来是上哲学课听不懂，于是录音以复习。因为有转录和人声增强的需求，所以花费了大量时间精力建立起</p>
+<ol>
+<li>ffmpeg loudnorm 标准化音量</li>
+<li>UVR5 人声增强</li>
+<li>* Audacity 降噪</li>
+<li>Whisper 转录</li>
+<li>LyricsX 滚动显示转录稿
+的工作流，由于过程实在太累，所以想把它记下来，同时建立起博客以便学习其他东西。，</li>
+</ol>
 
 
   </div>
 
   <footer class="post-footer">
+
   </footer>
     <div class="comments-separator"></div>
 </article>
