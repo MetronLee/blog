@@ -2,16 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://MetronLee.github.io/blog/docs/</loc>
-    <lastmod>2025-09-04T15:33:03+08:00</lastmod>
-  </url><url>
     <loc>https://MetronLee.github.io/blog/</loc>
     <lastmod>2025-09-04T15:33:03+08:00</lastmod>
   </url><url>
-    <loc>https://MetronLee.github.io/blog/docs/tmp/</loc>
+    <loc>https://MetronLee.github.io/blog/posts/</loc>
     <lastmod>2025-09-04T15:33:03+08:00</lastmod>
   </url><url>
+    <loc>https://MetronLee.github.io/blog/posts/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E6%AD%A4%E5%8D%9A%E5%AE%A2%E7%9A%84/</loc>
+    <lastmod>2025-09-04T15:33:03+08:00</lastmod>
+  </url><url>
+    <loc>https://MetronLee.github.io/blog/archives/</loc>
+  </url><url>
     <loc>https://MetronLee.github.io/blog/categories/</loc>
+  </url><url>
+    <loc>https://MetronLee.github.io/blog/search/</loc>
   </url><url>
     <loc>https://MetronLee.github.io/blog/tags/</loc>
   </url>

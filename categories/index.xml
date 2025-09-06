@@ -4,8 +4,7 @@
     <title>Categories on My blog</title>
     <link>https://MetronLee.github.io/blog/categories/</link>
     <description>Recent content in Categories on My blog</description>
-    <generator>Hugo -- 0.149.0</generator>
-    <language>en-us</language>
-    <atom:link href="https://MetronLee.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://MetronLee.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
