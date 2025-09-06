@@ -14,9 +14,6 @@ params:
     Title: "Hello Stranger"
     Content: >
       👋 Welcome to my blog. It is boring as hell.
-
-
-      [*About me*](https://github.com/MetronLee)
       
   socialIcons:
     - name: github
@@ -60,6 +57,10 @@ menu:
       name: Categories
       url: /categories/
       weight: 30
+    - name: "@bout me"
+      url: "https://github.com/MetronLee"
+      params:
+        external: true
 
 outputs:
   home:
