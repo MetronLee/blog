@@ -1,0 +1,92 @@
+---
+draft: false
+date: 2025-09-11T14:33:36+08:00
+title: 录音处理（人声、降噪、转录）
+slug:
+description:
+categories:
+  - Skills
+tags:
+  - skills
+  - workflow
+---
+# Motivation
+
+上哲学课听不懂，录音回去复习。
+
+##### 需求
+
+- 人声增强
+- 转录
+- 录音和转录稿同步播放
+
+##### 困难
+
+- 教授声音低沉
+- MacBook Air 录音，不定向，环境噪音大
+
+##### 环境
+
+- Windows 11
+- Nvidia Cuda
+
+# Steps
+
+### FFmpeg - 音量标准化
+
+```Bash
+ffmpeg -i input.mp3 -af loudnorm output.mp3
+```
+
+### UVR5 - 人声提取
+
+[Ultimate Vocal Remover V5 官网](https://ultimatevocalremover.com/)
+
+目前试过一些模型，发现 UVR-MDX-NET Inst HQ 5 效果很不错，142分钟的音频处理了14分钟，
+
+### Audacity - 降噪
+
+其实前一步效果已经很好了，可以略。
+
+选中一部分无人声的噪音区间，然后在 Effect - Noise Removal and Repair - Noise Reduction 页面里 Get Noise Profile, 然后全选整段音频区间，打开同样的 Noise Reduction 页面，微调几个参数后 Preview，最后 OK 就行。
+
+EQ曲线的话不太会调，感觉调了用处也不大。
+
+### Whisper - 转录
+
+[whisper 仓库地址](https://github.com/openai/whisper)
+
+##### 安装
+
+需要先装好 `ffmpeg`. 然后 `pip` 安装。
+
+```bash
+pip install -U openai-whisper
+```
+
+##### 运行
+
+```bash
+whisper input.flac input.mp3 input.wav --language en --initial_prompt="Heidegger, Phenomenology" 
+```
+
+其中，
+- `initial_prompt` 是初始提示词，用来准确识别一些术语。有意思的是根据[这篇文章](https://medium.com/axinc-ai/prompt-engineering-in-whisper-6bb18003562d), 在提示词中可以用短横线 `-` 来区分说话者，e.g.
+
+```bash
+--initial_prompt="- How are you? - I'm fine, thank you."
+```
+
+- `--carry_initial_prompt=True` 可以让初始提示词适用于全部。因为 whisper 是30s的滑动窗口算法，所以默认 `carry_initial_prompt=False`, 并将前30s的内容用来作为后面的提示词。
+- `--model turbo` 设置模型，默认 `turbo`，是 `large-v3` 的优化加快版，速度是真实时间的~8X
+- `--language en` 不解释
+
+完成后，自动和输出文件一起导出 .srt .vtt .txt 的逐字稿。
+
+### 播放
+
+用 Gemini CLI 写了个网页工具同步播放音频和逐字稿，[项目地址](https://github.com/MetronLee/Minimalist-Transcript-Player)
+
+# Afterword
+
+途中花费了大量时间精力，感觉陷入工具的汪洋大海而本末倒置了，引以为戒。写下来算是画个句号，要好好学习了🤓
