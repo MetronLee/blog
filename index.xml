@@ -6,7 +6,96 @@
     <description>Recent content on Metron&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Sep 2025 15:33:03 +0800</lastBuildDate><atom:link href="https://MetronLee.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 11 Sep 2025 14:33:36 +0800</lastBuildDate><atom:link href="https://MetronLee.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>录音处理（人声、降噪、转录）</title>
+      <link>https://MetronLee.github.io/blog/posts/2025-09-11_how-to-enhance-voice-recordings/how-to-enhance-voice-recordings/</link>
+      <pubDate>Thu, 11 Sep 2025 14:33:36 +0800</pubDate>
+      
+      <guid>https://MetronLee.github.io/blog/posts/2025-09-11_how-to-enhance-voice-recordings/how-to-enhance-voice-recordings/</guid>
+      <description>&lt;h1 id=&#34;motivation&#34;&gt;Motivation&lt;/h1&gt;
+&lt;p&gt;上哲学课听不懂，录音回去复习。&lt;/p&gt;
+&lt;h5 id=&#34;需求&#34;&gt;需求&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;人声增强&lt;/li&gt;
+&lt;li&gt;转录&lt;/li&gt;
+&lt;li&gt;录音和转录稿同步播放&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;困难&#34;&gt;困难&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;教授声音低沉&lt;/li&gt;
+&lt;li&gt;MacBook Air 录音，不定向，环境噪音大&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;环境&#34;&gt;环境&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows 11&lt;/li&gt;
+&lt;li&gt;Nvidia Cuda&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;steps&#34;&gt;Steps&lt;/h1&gt;
+&lt;h3 id=&#34;ffmpeg---音量标准化&#34;&gt;FFmpeg - 音量标准化&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp3 -af loudnorm output.mp3
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;uvr5---人声提取&#34;&gt;UVR5 - 人声提取&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://ultimatevocalremover.com/&#34;&gt;Ultimate Vocal Remover V5 官网&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;目前试过一些模型，发现 UVR-MDX-NET Inst HQ 5 效果很不错，142分钟的音频处理了14分钟，&lt;/p&gt;
+&lt;h3 id=&#34;audacity---降噪&#34;&gt;Audacity - 降噪&lt;/h3&gt;
+&lt;p&gt;其实前一步效果已经很好了，可以略。&lt;/p&gt;
+&lt;p&gt;选中一部分无人声的噪音区间，然后在 Effect - Noise Removal and Repair - Noise Reduction 页面里 Get Noise Profile, 然后全选整段音频区间，打开同样的 Noise Reduction 页面，微调几个参数后 Preview，最后 OK 就行。&lt;/p&gt;
+&lt;p&gt;EQ曲线的话不太会调，感觉调了用处也不大。&lt;/p&gt;
+&lt;h3 id=&#34;whisper---转录&#34;&gt;Whisper - 转录&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/openai/whisper&#34;&gt;whisper 仓库地址&lt;/a&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1 id="motivation">Motivation</h1>
+<p>上哲学课听不懂，录音回去复习。</p>
+<h5 id="需求">需求</h5>
+<ul>
+<li>人声增强</li>
+<li>转录</li>
+<li>录音和转录稿同步播放</li>
+</ul>
+<h5 id="困难">困难</h5>
+<ul>
+<li>教授声音低沉</li>
+<li>MacBook Air 录音，不定向，环境噪音大</li>
+</ul>
+<h5 id="环境">环境</h5>
+<ul>
+<li>Windows 11</li>
+<li>Nvidia Cuda</li>
+</ul>
+<h1 id="steps">Steps</h1>
+<h3 id="ffmpeg---音量标准化">FFmpeg - 音量标准化</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">ffmpeg -i input.mp3 -af loudnorm output.mp3
+</span></span></code></pre></div><h3 id="uvr5---人声提取">UVR5 - 人声提取</h3>
+<p><a href="https://ultimatevocalremover.com/">Ultimate Vocal Remover V5 官网</a></p>
+<p>目前试过一些模型，发现 UVR-MDX-NET Inst HQ 5 效果很不错，142分钟的音频处理了14分钟，</p>
+<h3 id="audacity---降噪">Audacity - 降噪</h3>
+<p>其实前一步效果已经很好了，可以略。</p>
+<p>选中一部分无人声的噪音区间，然后在 Effect - Noise Removal and Repair - Noise Reduction 页面里 Get Noise Profile, 然后全选整段音频区间，打开同样的 Noise Reduction 页面，微调几个参数后 Preview，最后 OK 就行。</p>
+<p>EQ曲线的话不太会调，感觉调了用处也不大。</p>
+<h3 id="whisper---转录">Whisper - 转录</h3>
+<p><a href="https://github.com/openai/whisper">whisper 仓库地址</a></p>
+<h5 id="安装">安装</h5>
+<p>需要先装好 <code>ffmpeg</code>. 然后 <code>pip</code> 安装。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install -U openai-whisper
+</span></span></code></pre></div><h5 id="运行">运行</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">whisper input.flac input.mp3 input.wav --language en --initial_prompt<span class="o">=</span><span class="s2">&#34;Heidegger, Phenomenology&#34;</span> 
+</span></span></code></pre></div><p>其中，</p>
+<ul>
+<li><code>initial_prompt</code> 是初始提示词，用来准确识别一些术语。有意思的是根据<a href="https://medium.com/axinc-ai/prompt-engineering-in-whisper-6bb18003562d">这篇文章</a>, 在提示词中可以用短横线 <code>-</code> 来区分说话者，e.g.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">--initial_prompt<span class="o">=</span><span class="s2">&#34;- How are you? - I&#39;m fine, thank you.&#34;</span>
+</span></span></code></pre></div><ul>
+<li><code>--carry_initial_prompt=True</code> 可以让初始提示词适用于全部。因为 whisper 是30s的滑动窗口算法，所以默认 <code>carry_initial_prompt=False</code>, 并将前30s的内容用来作为后面的提示词。</li>
+<li><code>--model turbo</code> 设置模型，默认 <code>turbo</code>，是 <code>large-v3</code> 的优化加快版，速度是真实时间的~8X</li>
+<li><code>--language en</code> 不解释</li>
+</ul>
+<p>完成后，自动和输出文件一起导出 .srt .vtt .txt 的逐字稿。</p>
+<h3 id="播放">播放</h3>
+<p>用 Gemini CLI 写了个网页工具同步播放音频和逐字稿，<a href="https://github.com/MetronLee/Minimalist-Transcript-Player">项目地址</a></p>
+<h1 id="afterword">Afterword</h1>
+<p>途中花费了大量时间精力，感觉陷入工具的汪洋大海而本末倒置了，引以为戒。写下来算是画个句号，要好好学习了🤓</p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>我是如何搭建此博客的</title>
       <link>https://MetronLee.github.io/blog/posts/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E6%AD%A4%E5%8D%9A%E5%AE%A2%E7%9A%84/</link>
@@ -69,7 +158,7 @@ Gemini CLI + 各种奇思妙想花了好久才解决😭😡😭😡😭。解�
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">noClasses</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span></span></span></code></pre></div><h3 id="hugo-admonitions">Hugo-admonitions</h3>
 <p><a href="https://github.com/KKKZOZ/hugo-admonitions">Git仓库</a></p>
-<p>用来渲染 Obsidian 的 Callout 的，效果不错</p>
+<p>用来渲染 Obsidian 的 Callout 的，效果不错。如图</p>
 <p>
   <img loading="lazy" src="https://img.metron.top/20250906/1757152353_Screenshot%202025-09-06%20at%205.52.30%E2%80%AFPM.png" alt="Screenshot 2025-09-06 at 5.52.30 PM"  /></p>
 <h1 id="图床">图床</h1>
@@ -78,7 +167,7 @@ Gemini CLI + 各种奇思妙想花了好久才解决😭😡😭😡😭。解�
 <h3 id="picgo">PicGo</h3>
 <p>MacOS 用户如果喜欢截图后显示 floating thumbnail 的话记得给 PicGo 开启全盘读取权限，才能拖拽 thumbnail 上传。</p>
 <p>教程中 Amazon S3 插件的“自定义域名”已经改成了“自定义URL输出模板”，设成<code>https://img.example.com/{path}</code>就好。变量详见<a href="https://github.com/wayjam/picgo-plugin-s3">插件官网</a>.</p>
-<h1 id="obsidian-quickadd">Obsidian QuickAdd</h1>
+<h3 id="obsidian-quickadd">Obsidian QuickAdd</h3>
 
     <div class="admonition warning">
       <div class="admonition-header"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480L40 480c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24l0 112c0 13.3 10.7 24 24 24s24-10.7 24-24l0-112c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>
@@ -98,19 +187,19 @@ tags: []
 ---
 </code></pre>
       </div>
-    </div><p>另外，脚本和 template 是放在 <code>obs_scripts</code> 目录下的，而这个 obsidian 仓库是在 content 子目录下的，所以要在 <code>hugo.yml</code> 中把这个目录 ignore 了以免被 Hugo 处理：</p>
+    </div><p>因为这个插件相关的脚本和 template 是放在 obs_scripts/ 下的，而我的 Obsidian 仓库是在 Hugo 的 content/ 目录下的，所以要在 <code>hugo.yml</code> 中把 obs_scripts/ 给 ignore 了以免被 Hugo 处理：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-hugo.yml" data-lang="hugo.yml"><span class="line"><span class="cl"><span class="nt">ignoreFiles</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="s2">&#34;content/posts/obs_scripts/.*&#34;</span><span class="w">
 </span></span></span></code></pre></div><h1 id="后记">后记</h1>
 <p>为什么突然想搭一个博客呢……本来是上哲学课听不懂，于是录音以复习。因为有转录和人声增强的需求，所以花费了大量时间精力建立起</p>
 <ol>
 <li>ffmpeg loudnorm 标准化音量</li>
-<li>UVR5 人声增强</li>
+<li>UVR5 提取人声</li>
 <li>* Audacity 降噪</li>
 <li>Whisper 转录</li>
 <li>LyricsX 滚动显示转录稿</li>
 </ol>
-<p>的工作流，由于过程实在太累，所以想把它记下来，同时建立起博客以便学习其他东西。</p>
+<p>的[工作流](，由于过程实在太累，所以想把它记下来，同时建立起博客以便学习其他东西。</p>
 ]]></content:encoded>
     </item>
     
