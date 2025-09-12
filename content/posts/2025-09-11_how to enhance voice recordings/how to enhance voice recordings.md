@@ -34,6 +34,8 @@ tags:
 
 ### FFmpeg - 音量标准化
 
+让整体音量一致，不高不低。
+
 ```Bash
 ffmpeg -i input.mp3 -af loudnorm output.mp3
 ```
@@ -81,7 +83,7 @@ whisper input.flac input.mp3 input.wav --language en --initial_prompt="Heidegger
 - `--model turbo` 设置模型，默认 `turbo`，是 `large-v3` 的优化加快版，速度是真实时间的~8X
 - `--language en` 不解释
 
-完成后，自动和输出文件一起导出 .srt .vtt .txt 的逐字稿。
+运行完成后，在当前工作目录下导出 .srt .vtt .txt 的逐字稿。也可以指定 `--output_dir /path/to/output/folder`.
 
 ### 播放
 
