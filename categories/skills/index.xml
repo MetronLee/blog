@@ -33,6 +33,7 @@
 &lt;/ul&gt;
 &lt;h1 id=&#34;steps&#34;&gt;Steps&lt;/h1&gt;
 &lt;h3 id=&#34;ffmpeg---音量标准化&#34;&gt;FFmpeg - 音量标准化&lt;/h3&gt;
+&lt;p&gt;让整体音量一致，不高不低。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp3 -af loudnorm output.mp3
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;uvr5---人声提取&#34;&gt;UVR5 - 人声提取&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://ultimatevocalremover.com/&#34;&gt;Ultimate Vocal Remover V5 官网&lt;/a&gt;&lt;/p&gt;
@@ -63,6 +64,7 @@
 </ul>
 <h1 id="steps">Steps</h1>
 <h3 id="ffmpeg---音量标准化">FFmpeg - 音量标准化</h3>
+<p>让整体音量一致，不高不低。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">ffmpeg -i input.mp3 -af loudnorm output.mp3
 </span></span></code></pre></div><h3 id="uvr5---人声提取">UVR5 - 人声提取</h3>
 <p><a href="https://ultimatevocalremover.com/">Ultimate Vocal Remover V5 官网</a></p>
@@ -88,7 +90,7 @@
 <li><code>--model turbo</code> 设置模型，默认 <code>turbo</code>，是 <code>large-v3</code> 的优化加快版，速度是真实时间的~8X</li>
 <li><code>--language en</code> 不解释</li>
 </ul>
-<p>完成后，自动和输出文件一起导出 .srt .vtt .txt 的逐字稿。</p>
+<p>运行完成后，在当前工作目录下导出 .srt .vtt .txt 的逐字稿。也可以指定 <code>--output_dir /path/to/output/folder</code>.</p>
 <h3 id="播放">播放</h3>
 <p>用 Gemini CLI 写了个网页工具同步播放音频和逐字稿，<a href="https://github.com/MetronLee/Minimalist-Transcript-Player">项目地址</a></p>
 <h1 id="afterword">Afterword</h1>
