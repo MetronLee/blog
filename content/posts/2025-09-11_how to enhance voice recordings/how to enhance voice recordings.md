@@ -1,3 +1,10 @@
+<!--
+ * @Author: Metron Lee
+ * @Date: 2025-09-17 13:47:12
+ * @LastEditors: Metron Lee
+ * @LastEditTime: 2025-09-18 00:22:34
+ * @Description: 
+-->
 ---
 draft: false
 date: 2025-09-11T14:33:36+08:00
@@ -36,8 +43,25 @@ tags:
 
 让整体音量一致，不高不低。
 
+有两种方法：一遍处理和两遍处理（推荐）。嫌麻烦的话就一遍处理：
+
 ```Bash
-ffmpeg -i input.mp3 -af loudnorm output.mp3
+ffmpeg -i input.wav -af loudnorm=I=-23:TP=-2:LRA=7 -ar 248k output.wav
+```
+
+两遍处理：先解析一次原音频，然后使用解析出来的参数：
+
+```Bash
+ffmpeg -i input.wav -filter:a loudnorm=print_format=json -f null -
+ffmpeg -i input.wav -filter:a loudnorm=i=-23:tp=-2:lra=7:measured_I=-XX.X:measured_TP=-Y.Y:measured_LRA=Z.Z:measured_R128_thresh=-W.W -ar 248k output.wav
+```
+
+其中 `X.X`, `Y.Y`, `Z.Z`, `W.W` 换成第一遍的输出。
+
+由于我每次录制的环境相同，音频质量相同，所以解析了一次之后得到下行代码直接复用就行：
+
+```Bash
+ ffmpeg -i imput.m4a -af loudnorm=I=-23:TP=-2:LRA=7:measured_I=-31.47:measured_TP=-10.58:measured_LRA=16.8:measured_thresh=-43.46:offset=-2.0:linear=true:print_format=summary -b:a 248k loudnormed.mp3
 ```
 
 ### UVR5 - 人声提取
@@ -69,7 +93,7 @@ pip install -U openai-whisper
 ##### 运行
 
 ```bash
-whisper input.flac input.mp3 input.wav --language en --initial_prompt="Heidegger, Phenomenology" 
+whisper input.flac input.mp3 input.wav --language en --initial_prompt="Heidegger, Phenomenology"
 ```
 
 其中，
