@@ -34,16 +34,17 @@
 &lt;h1 id=&#34;steps&#34;&gt;Steps&lt;/h1&gt;
 &lt;h3 id=&#34;ffmpeg---音量标准化&#34;&gt;FFmpeg - 音量标准化&lt;/h3&gt;
 &lt;p&gt;让整体音量一致，不高不低。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.mp3 -af loudnorm output.mp3
+&lt;p&gt;有两种方法：一遍处理和两遍处理（推荐）。嫌麻烦的话就一遍处理：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.wav -af &lt;span class=&#34;nv&#34;&gt;loudnorm&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-23:TP&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-2:LRA&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;7&lt;/span&gt; -ar 248k output.wav
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;两遍处理：先解析一次原音频，然后使用解析出来的参数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.wav -filter:a &lt;span class=&#34;nv&#34;&gt;loudnorm&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;print_format&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;json -f null -
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ffmpeg -i input.wav -filter:a &lt;span class=&#34;nv&#34;&gt;loudnorm&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-23:tp&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-2:lra&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;7:measured_I&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-XX.X:measured_TP&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-Y.Y:measured_LRA&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;Z.Z:measured_R128_thresh&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-W.W -ar 248k output.wav
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;其中 &lt;code&gt;X.X&lt;/code&gt;, &lt;code&gt;Y.Y&lt;/code&gt;, &lt;code&gt;Z.Z&lt;/code&gt;, &lt;code&gt;W.W&lt;/code&gt; 换成第一遍的输出。&lt;/p&gt;
+&lt;p&gt;由于我每次录制的环境相同，音频质量相同，所以解析了一次之后得到下行代码直接复用就行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Bash&#34; data-lang=&#34;Bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; ffmpeg -i imput.m4a -af &lt;span class=&#34;nv&#34;&gt;loudnorm&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-23:TP&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-2:LRA&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;7:measured_I&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-31.47:measured_TP&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-10.58:measured_LRA&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;16.8:measured_thresh&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-43.46:offset&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;-2.0:linear&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;true:print_format&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;summary -b:a 248k loudnormed.mp3
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;uvr5---人声提取&#34;&gt;UVR5 - 人声提取&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://ultimatevocalremover.com/&#34;&gt;Ultimate Vocal Remover V5 官网&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;目前试过一些模型，发现 UVR-MDX-NET Inst HQ 5 效果很不错，142分钟的音频处理了14分钟，&lt;/p&gt;
-&lt;h3 id=&#34;audacity---降噪&#34;&gt;Audacity - 降噪&lt;/h3&gt;
-&lt;p&gt;其实前一步效果已经很好了，可以略。&lt;/p&gt;
-&lt;p&gt;选中一部分无人声的噪音区间，然后在 Effect - Noise Removal and Repair - Noise Reduction 页面里 Get Noise Profile, 然后全选整段音频区间，打开同样的 Noise Reduction 页面，微调几个参数后 Preview，最后 OK 就行。&lt;/p&gt;
-&lt;p&gt;EQ曲线的话不太会调，感觉调了用处也不大。&lt;/p&gt;
-&lt;h3 id=&#34;whisper---转录&#34;&gt;Whisper - 转录&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/openai/whisper&#34;&gt;whisper 仓库地址&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;目前试过一些模型，发现 UVR-MDX-NET Inst HQ 5 效果很不错，142分钟的音频处理了14分钟，&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h1 id="motivation">Motivation</h1>
 <p>上哲学课听不懂，录音回去复习。</p>
 <h5 id="需求">需求</h5>
@@ -65,7 +66,14 @@
 <h1 id="steps">Steps</h1>
 <h3 id="ffmpeg---音量标准化">FFmpeg - 音量标准化</h3>
 <p>让整体音量一致，不高不低。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">ffmpeg -i input.mp3 -af loudnorm output.mp3
+<p>有两种方法：一遍处理和两遍处理（推荐）。嫌麻烦的话就一遍处理：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">ffmpeg -i input.wav -af <span class="nv">loudnorm</span><span class="o">=</span><span class="nv">I</span><span class="o">=</span>-23:TP<span class="o">=</span>-2:LRA<span class="o">=</span><span class="m">7</span> -ar 248k output.wav
+</span></span></code></pre></div><p>两遍处理：先解析一次原音频，然后使用解析出来的参数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl">ffmpeg -i input.wav -filter:a <span class="nv">loudnorm</span><span class="o">=</span><span class="nv">print_format</span><span class="o">=</span>json -f null -
+</span></span><span class="line"><span class="cl">ffmpeg -i input.wav -filter:a <span class="nv">loudnorm</span><span class="o">=</span><span class="nv">i</span><span class="o">=</span>-23:tp<span class="o">=</span>-2:lra<span class="o">=</span>7:measured_I<span class="o">=</span>-XX.X:measured_TP<span class="o">=</span>-Y.Y:measured_LRA<span class="o">=</span>Z.Z:measured_R128_thresh<span class="o">=</span>-W.W -ar 248k output.wav
+</span></span></code></pre></div><p>其中 <code>X.X</code>, <code>Y.Y</code>, <code>Z.Z</code>, <code>W.W</code> 换成第一遍的输出。</p>
+<p>由于我每次录制的环境相同，音频质量相同，所以解析了一次之后得到下行代码直接复用就行：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"> ffmpeg -i imput.m4a -af <span class="nv">loudnorm</span><span class="o">=</span><span class="nv">I</span><span class="o">=</span>-23:TP<span class="o">=</span>-2:LRA<span class="o">=</span>7:measured_I<span class="o">=</span>-31.47:measured_TP<span class="o">=</span>-10.58:measured_LRA<span class="o">=</span>16.8:measured_thresh<span class="o">=</span>-43.46:offset<span class="o">=</span>-2.0:linear<span class="o">=</span>true:print_format<span class="o">=</span>summary -b:a 248k loudnormed.mp3
 </span></span></code></pre></div><h3 id="uvr5---人声提取">UVR5 - 人声提取</h3>
 <p><a href="https://ultimatevocalremover.com/">Ultimate Vocal Remover V5 官网</a></p>
 <p>目前试过一些模型，发现 UVR-MDX-NET Inst HQ 5 效果很不错，142分钟的音频处理了14分钟，</p>
@@ -79,7 +87,7 @@
 <p>需要先装好 <code>ffmpeg</code>. 然后 <code>pip</code> 安装。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install -U openai-whisper
 </span></span></code></pre></div><h5 id="运行">运行</h5>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">whisper input.flac input.mp3 input.wav --language en --initial_prompt<span class="o">=</span><span class="s2">&#34;Heidegger, Phenomenology&#34;</span> 
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">whisper input.flac input.mp3 input.wav --language en --initial_prompt<span class="o">=</span><span class="s2">&#34;Heidegger, Phenomenology&#34;</span>
 </span></span></code></pre></div><p>其中，</p>
 <ul>
 <li><code>initial_prompt</code> 是初始提示词，用来准确识别一些术语。有意思的是根据<a href="https://medium.com/axinc-ai/prompt-engineering-in-whisper-6bb18003562d">这篇文章</a>, 在提示词中可以用短横线 <code>-</code> 来区分说话者，e.g.</li>
