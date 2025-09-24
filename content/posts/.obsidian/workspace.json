@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2025-09-11_how to enhance voice recordings/how to enhance voice recordings.md",
+                "file": "我是如何搭建此博客的.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "how to enhance voice recordings"
+              "title": "我是如何搭建此博客的"
             }
           }
         ]
@@ -74,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -142,13 +141,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2025-09-11_how to enhance voice recordings/how to enhance voice recordings.md",
+                "file": "我是如何搭建此博客的.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of how to enhance voice recordings"
+              "title": "Outline of 我是如何搭建此博客的"
             }
           }
         ],
@@ -170,10 +169,10 @@
       "vim-toggle:Toggle Vim Mode": false
     }
   },
-  "active": "18cbf3083168784d",
+  "active": "21a8629ee854bade",
   "lastOpenFiles": [
-    "我是如何搭建此博客的.md",
     "2025-09-11_how to enhance voice recordings/how to enhance voice recordings.md",
+    "我是如何搭建此博客的.md",
     "录音处理（人声、降噪、转录）.md",
     "2025-09-11_how to enhance voice recordings",
     "2025-09-11_",
