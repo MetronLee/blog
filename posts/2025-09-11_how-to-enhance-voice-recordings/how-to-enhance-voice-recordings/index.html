@@ -35,7 +35,7 @@ ffmpeg -i input.wav -filter:a loudnorm=print_format=json -f null -
 ffmpeg -i input.wav -filter:a loudnorm=i=-23:tp=-2:lra=7:measured_I=-XX.X:measured_TP=-Y.Y:measured_LRA=Z.Z:measured_R128_thresh=-W.W -ar 248k output.wav
 其中 X.X, Y.Y, Z.Z, W.W 换成第一遍的输出。
 由于我每次录制的环境相同，音频质量相同，所以解析了一次之后得到下行代码直接复用就行：
- ffmpeg -i imput.m4a -af loudnorm=I=-23:TP=-2:LRA=7:measured_I=-31.47:measured_TP=-10.58:measured_LRA=16.8:measured_thresh=-43.46:offset=-2.0:linear=true:print_format=summary -b:a 248k loudnormed.mp3
+ ffmpeg -i input.m4a -af loudnorm=I=-23:TP=-2:LRA=7:measured_I=-31.47:measured_TP=-10.58:measured_LRA=16.8:measured_thresh=-43.46:offset=-2.0:linear=true:print_format=summary -b:a 248k loudnormed.mp3
 UVR5 - 人声提取
 Ultimate Vocal Remover V5 官网
 目前试过一些模型，发现 UVR-MDX-NET Inst HQ 5 效果很不错，142分钟的音频处理了14分钟，">
@@ -75,7 +75,7 @@ ffmpeg -i input.wav -filter:a loudnorm=print_format=json -f null -
 ffmpeg -i input.wav -filter:a loudnorm=i=-23:tp=-2:lra=7:measured_I=-XX.X:measured_TP=-Y.Y:measured_LRA=Z.Z:measured_R128_thresh=-W.W -ar 248k output.wav
 其中 X.X, Y.Y, Z.Z, W.W 换成第一遍的输出。
 由于我每次录制的环境相同，音频质量相同，所以解析了一次之后得到下行代码直接复用就行：
- ffmpeg -i imput.m4a -af loudnorm=I=-23:TP=-2:LRA=7:measured_I=-31.47:measured_TP=-10.58:measured_LRA=16.8:measured_thresh=-43.46:offset=-2.0:linear=true:print_format=summary -b:a 248k loudnormed.mp3
+ ffmpeg -i input.m4a -af loudnorm=I=-23:TP=-2:LRA=7:measured_I=-31.47:measured_TP=-10.58:measured_LRA=16.8:measured_thresh=-43.46:offset=-2.0:linear=true:print_format=summary -b:a 248k loudnormed.mp3
 UVR5 - 人声提取
 Ultimate Vocal Remover V5 官网
 目前试过一些模型，发现 UVR-MDX-NET Inst HQ 5 效果很不错，142分钟的音频处理了14分钟，" />
@@ -108,7 +108,7 @@ ffmpeg -i input.wav -filter:a loudnorm=print_format=json -f null -
 ffmpeg -i input.wav -filter:a loudnorm=i=-23:tp=-2:lra=7:measured_I=-XX.X:measured_TP=-Y.Y:measured_LRA=Z.Z:measured_R128_thresh=-W.W -ar 248k output.wav
 其中 X.X, Y.Y, Z.Z, W.W 换成第一遍的输出。
 由于我每次录制的环境相同，音频质量相同，所以解析了一次之后得到下行代码直接复用就行：
- ffmpeg -i imput.m4a -af loudnorm=I=-23:TP=-2:LRA=7:measured_I=-31.47:measured_TP=-10.58:measured_LRA=16.8:measured_thresh=-43.46:offset=-2.0:linear=true:print_format=summary -b:a 248k loudnormed.mp3
+ ffmpeg -i input.m4a -af loudnorm=I=-23:TP=-2:LRA=7:measured_I=-31.47:measured_TP=-10.58:measured_LRA=16.8:measured_thresh=-43.46:offset=-2.0:linear=true:print_format=summary -b:a 248k loudnormed.mp3
 UVR5 - 人声提取
 Ultimate Vocal Remover V5 官网
 目前试过一些模型，发现 UVR-MDX-NET Inst HQ 5 效果很不错，142分钟的音频处理了14分钟，" />
@@ -145,7 +145,7 @@ Ultimate Vocal Remover V5 官网
   "@type": "BlogPosting",
   "headline": "录音处理（人声、降噪、转录） | Metron's Blog",
   "name": "录音处理（人声、降噪、转录）",
-  "description": "Motivation 上哲学课听不懂，录音回去复习。\n需求 人声增强 转录 录音和转录稿同步播放 困难 教授声音低沉 MacBook Air 录音，不定向，环境噪音大 环境 Windows 11 Nvidia Cuda Steps FFmpeg - 音量标准化 让整体音量一致，不高不低。\n有两种方法：一遍处理和两遍处理（推荐）。嫌麻烦的话就一遍处理：\nffmpeg -i input.wav -af loudnorm=I=-23:TP=-2:LRA=7 -ar 248k output.wav 两遍处理：先解析一次原音频，然后使用解析出来的参数：\nffmpeg -i input.wav -filter:a loudnorm=print_format=json -f null - ffmpeg -i input.wav -filter:a loudnorm=i=-23:tp=-2:lra=7:measured_I=-XX.X:measured_TP=-Y.Y:measured_LRA=Z.Z:measured_R128_thresh=-W.W -ar 248k output.wav 其中 X.X, Y.Y, Z.Z, W.W 换成第一遍的输出。\n由于我每次录制的环境相同，音频质量相同，所以解析了一次之后得到下行代码直接复用就行：\nffmpeg -i imput.m4a -af loudnorm=I=-23:TP=-2:LRA=7:measured_I=-31.47:measured_TP=-10.58:measured_LRA=16.8:measured_thresh=-43.46:offset=-2.0:linear=true:print_format=summary -b:a 248k loudnormed.mp3 UVR5 - 人声提取 Ultimate Vocal Remover V5 官网\n目前试过一些模型，发现 UVR-MDX-NET Inst HQ 5 效果很不错，142分钟的音频处理了14分钟，\n",
+  "description": "Motivation 上哲学课听不懂，录音回去复习。\n需求 人声增强 转录 录音和转录稿同步播放 困难 教授声音低沉 MacBook Air 录音，不定向，环境噪音大 环境 Windows 11 Nvidia Cuda Steps FFmpeg - 音量标准化 让整体音量一致，不高不低。\n有两种方法：一遍处理和两遍处理（推荐）。嫌麻烦的话就一遍处理：\nffmpeg -i input.wav -af loudnorm=I=-23:TP=-2:LRA=7 -ar 248k output.wav 两遍处理：先解析一次原音频，然后使用解析出来的参数：\nffmpeg -i input.wav -filter:a loudnorm=print_format=json -f null - ffmpeg -i input.wav -filter:a loudnorm=i=-23:tp=-2:lra=7:measured_I=-XX.X:measured_TP=-Y.Y:measured_LRA=Z.Z:measured_R128_thresh=-W.W -ar 248k output.wav 其中 X.X, Y.Y, Z.Z, W.W 换成第一遍的输出。\n由于我每次录制的环境相同，音频质量相同，所以解析了一次之后得到下行代码直接复用就行：\nffmpeg -i input.m4a -af loudnorm=I=-23:TP=-2:LRA=7:measured_I=-31.47:measured_TP=-10.58:measured_LRA=16.8:measured_thresh=-43.46:offset=-2.0:linear=true:print_format=summary -b:a 248k loudnormed.mp3 UVR5 - 人声提取 Ultimate Vocal Remover V5 官网\n目前试过一些模型，发现 UVR-MDX-NET Inst HQ 5 效果很不错，142分钟的音频处理了14分钟，\n",
   "keywords": [
     "skills", "workflow"
   ],
@@ -442,7 +442,7 @@ function toggleThemeListener() {
 </span></span><span class="line"><span class="cl">ffmpeg -i input.wav -filter:a <span class="nv">loudnorm</span><span class="o">=</span><span class="nv">i</span><span class="o">=</span>-23:tp<span class="o">=</span>-2:lra<span class="o">=</span>7:measured_I<span class="o">=</span>-XX.X:measured_TP<span class="o">=</span>-Y.Y:measured_LRA<span class="o">=</span>Z.Z:measured_R128_thresh<span class="o">=</span>-W.W -ar 248k output.wav
 </span></span></code></pre></div><p>其中 <code>X.X</code>, <code>Y.Y</code>, <code>Z.Z</code>, <code>W.W</code> 换成第一遍的输出。</p>
 <p>由于我每次录制的环境相同，音频质量相同，所以解析了一次之后得到下行代码直接复用就行：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"> ffmpeg -i imput.m4a -af <span class="nv">loudnorm</span><span class="o">=</span><span class="nv">I</span><span class="o">=</span>-23:TP<span class="o">=</span>-2:LRA<span class="o">=</span>7:measured_I<span class="o">=</span>-31.47:measured_TP<span class="o">=</span>-10.58:measured_LRA<span class="o">=</span>16.8:measured_thresh<span class="o">=</span>-43.46:offset<span class="o">=</span>-2.0:linear<span class="o">=</span>true:print_format<span class="o">=</span>summary -b:a 248k loudnormed.mp3
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Bash" data-lang="Bash"><span class="line"><span class="cl"> ffmpeg -i input.m4a -af <span class="nv">loudnorm</span><span class="o">=</span><span class="nv">I</span><span class="o">=</span>-23:TP<span class="o">=</span>-2:LRA<span class="o">=</span>7:measured_I<span class="o">=</span>-31.47:measured_TP<span class="o">=</span>-10.58:measured_LRA<span class="o">=</span>16.8:measured_thresh<span class="o">=</span>-43.46:offset<span class="o">=</span>-2.0:linear<span class="o">=</span>true:print_format<span class="o">=</span>summary -b:a 248k loudnormed.mp3
 </span></span></code></pre></div><h3 id="uvr5---人声提取">UVR5 - 人声提取<a hidden class="anchor" aria-hidden="true" href="#uvr5---人声提取">¶</a></h3>
 <p><a href="https://ultimatevocalremover.com/">Ultimate Vocal Remover V5 官网</a></p>
 <p>目前试过一些模型，发现 UVR-MDX-NET Inst HQ 5 效果很不错，142分钟的音频处理了14分钟，</p>
