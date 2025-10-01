@@ -54,7 +54,7 @@ ffmpeg -i input.wav -filter:a loudnorm=i=-23:tp=-2:lra=7:measured_I=-XX.X:measur
 由于我每次录制的环境相同，音频质量相同，所以解析了一次之后得到下行代码直接复用就行：
 
 ```Bash
- ffmpeg -i imput.m4a -af loudnorm=I=-23:TP=-2:LRA=7:measured_I=-31.47:measured_TP=-10.58:measured_LRA=16.8:measured_thresh=-43.46:offset=-2.0:linear=true:print_format=summary -b:a 248k loudnormed.mp3
+ ffmpeg -i input.m4a -af loudnorm=I=-23:TP=-2:LRA=7:measured_I=-31.47:measured_TP=-10.58:measured_LRA=16.8:measured_thresh=-43.46:offset=-2.0:linear=true:print_format=summary -b:a 248k loudnormed.mp3
 ```
 
 ### UVR5 - 人声提取
