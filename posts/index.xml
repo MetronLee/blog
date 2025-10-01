@@ -6,7 +6,64 @@
     <description>Recent content in Posts on Metron&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Sep 2025 14:33:36 +0800</lastBuildDate><atom:link href="https://MetronLee.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Oct 2025 22:36:07 +0800</lastBuildDate><atom:link href="https://MetronLee.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Subtyping</title>
+      <link>https://MetronLee.github.io/blog/posts/2025-10-01_subtyping/subtyping/</link>
+      <pubDate>Wed, 01 Oct 2025 22:36:07 +0800</pubDate>
+      
+      <guid>https://MetronLee.github.io/blog/posts/2025-10-01_subtyping/subtyping/</guid>
+      <description>&lt;h1 id=&#34;primitive-terms&#34;&gt;Primitive Terms&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If you are expecting from me a furniture, then a table will work.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;-&lt;a href=&#34;https://www.youtube.com/live/DjrA7_Uymok?si=tjFGKnDtHzg5h2Z2&amp;amp;t=263&#34;&gt;Inheritance vs. Subtyping (webinar #24)&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;lsp&#34;&gt;LSP&lt;/h1&gt;
+&lt;p&gt;The &lt;strong&gt;Liskov substitution principle&lt;/strong&gt; (&lt;strong&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Liskov_substitution_principle&#34;&gt;LSP&lt;/a&gt;&lt;/strong&gt;) is a particular definition of a &lt;a href=&#34;https://en.wikipedia.org/wiki/Subtyping&#34; title=&#34;Subtyping&#34;&gt;subtyping&lt;/a&gt; relation, called &lt;a href=&#34;https://en.wikipedia.org/wiki/Behavioral_subtyping&#34; title=&#34;Behavioral subtyping&#34;&gt;strong behavioral subtyping&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;在 &lt;strong&gt;Liskov Substitution Principle (LSP)&lt;/strong&gt; 下，子类型关系不是由具体实现决定的，而是由 &lt;strong&gt;约定的属性和契约&lt;/strong&gt; 决定的。在具体实现不变时，通过改变约定的属性和契约，就可以改变 subtyping 关系。&lt;/p&gt;
+&lt;h1 id=&#34;in-code&#34;&gt;In Code&lt;/h1&gt;
+&lt;p&gt;到具体实现上，有些要注意的地方（传参、type-casting, etc.)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Let $S$ and $T$ be two types. We say that $T$ is a &lt;em&gt;subtype&lt;/em&gt; of $S$ if &lt;em&gt;a piece of code written for variables of type $S$ can also safely be used on variables of type&lt;/em&gt; $T$ .&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1 id="primitive-terms">Primitive Terms</h1>
+<blockquote>
+<p>If you are expecting from me a furniture, then a table will work.</p></blockquote>
+<p>-<a href="https://www.youtube.com/live/DjrA7_Uymok?si=tjFGKnDtHzg5h2Z2&amp;t=263">Inheritance vs. Subtyping (webinar #24)</a></p>
+<h1 id="lsp">LSP</h1>
+<p>The <strong>Liskov substitution principle</strong> (<strong><a href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">LSP</a></strong>) is a particular definition of a <a href="https://en.wikipedia.org/wiki/Subtyping" title="Subtyping">subtyping</a> relation, called <a href="https://en.wikipedia.org/wiki/Behavioral_subtyping" title="Behavioral subtyping">strong behavioral subtyping</a>.</p>
+<p>在 <strong>Liskov Substitution Principle (LSP)</strong> 下，子类型关系不是由具体实现决定的，而是由 <strong>约定的属性和契约</strong> 决定的。在具体实现不变时，通过改变约定的属性和契约，就可以改变 subtyping 关系。</p>
+<h1 id="in-code">In Code</h1>
+<p>到具体实现上，有些要注意的地方（传参、type-casting, etc.)</p>
+<blockquote>
+<p>Let $S$ and $T$ be two types. We say that $T$ is a <em>subtype</em> of $S$ if <em>a piece of code written for variables of type $S$ can also safely be used on variables of type</em> $T$ .</p></blockquote>
+<p>-<a href="https://nus-cs2030s.github.io/2526-s1/notes/02-type.html#primitive-types-in-java">CS2030S Unit 2 Lecture Note</a></p>
+<p>这里的 &ldquo;written for&rdquo;, &ldquo;safely be used on&rdquo; 定义太模糊了。不如 ChatGPT：</p>
+<blockquote>
+<p>Java 或任何面向对象语言里讨论 <strong>subtyping（子类型关系）</strong> 时，重点在于 <strong>类型的抽象属性</strong>，而不是具体的代码实现。换句话说，子类型关系关注的是：</p>
+<ol>
+<li>
+<p><strong>值域</strong>（可能的取值集合）</p>
+</li>
+<li>
+<p><strong>允许的操作</strong>（能对该类型安全地执行哪些操作）</p>
+</li>
+<li>
+<p><strong>接口契约</strong>（约定行为，方法签名和返回类型）</p>
+</li>
+</ol>
+<p>它并不考虑具体方法内部是怎么实现的，也不看成员变量的实际存储方式或算法逻辑。</p>
+<p>比如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>从 <strong>subtyping</strong> 的角度看，Dog &lt;: Animal，因为任何操作可以安全地应用于 Animal，也可以_安全地用于_ Dog。你不需要关心 Dog.eat() 具体做了什么，只要类型接口满足要求即可。</p>
+<p>可以把它理解成 <strong>“类型是一种抽象契约，而不是实现细节”</strong></p></blockquote>
+<p>具体地说，</p>
+<blockquote>
+<p>你为父类型写的代码可以在子类型的实例上运行，而<strong>不会引起类型错误（从代码运行的角度）或违反类型契约（从抽象属性的角度）</strong>。</p></blockquote>
+<h1 id="总结">总结</h1>
+<p>Subtyping relationship 主要还是一个抽象概念。Semantic(语义的) rather than syntactic(语句的).</p>
+]]></content:encoded>
+    </item>
+    
     <item>
       <title>录音处理（人声、降噪、转录）</title>
       <link>https://MetronLee.github.io/blog/posts/2025-09-11_how-to-enhance-voice-recordings/how-to-enhance-voice-recordings/</link>
