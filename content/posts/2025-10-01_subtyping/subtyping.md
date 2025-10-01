@@ -47,7 +47,7 @@ The **Liskov substitution principle** (**[LSP](https://en.wikipedia.org/wiki/L
 >class Dog extends Animal { void eat() {} }
 >```
 >
->从 **subtyping** 的角度看，Dog <: Animal，因为任何操作可以安全地应用于 Animal，也可以_安全地用于_ Dog。你不需要关心 Dog.eat() 具体做了什么，只要类型接口满足要求即可。
+>从 **subtyping** 的角度看，Dog <: Animal，因为任何操作可以安全地应用于 Animal，也可以*安全地用于* Dog。你不需要关心 Dog.eat() 具体做了什么，只要类型接口满足要求即可。
 >
 >可以把它理解成 **“类型是一种抽象契约，而不是实现细节”**
 
