@@ -54,7 +54,7 @@
 <p>比如：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">class</span> <span class="nc">Dog</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">eat</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></div><p>从 <strong>subtyping</strong> 的角度看，Dog &lt;: Animal，因为任何操作可以安全地应用于 Animal，也可以_安全地用于_ Dog。你不需要关心 Dog.eat() 具体做了什么，只要类型接口满足要求即可。</p>
+</span></span></span></code></pre></div><p>从 <strong>subtyping</strong> 的角度看，Dog &lt;: Animal，因为任何操作可以安全地应用于 Animal，也可以<em>安全地用于</em> Dog。你不需要关心 Dog.eat() 具体做了什么，只要类型接口满足要求即可。</p>
 <p>可以把它理解成 <strong>“类型是一种抽象契约，而不是实现细节”</strong></p></blockquote>
 <p>具体地说，</p>
 <blockquote>
