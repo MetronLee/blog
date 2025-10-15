@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "subtyping"
             }
+          },
+          {
+            "id": "28037977a7ca366c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2025-10-15_seinsfrage/seinsfrage.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "seinsfrage"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -93,8 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 298.5,
-    "collapsed": true
+    "width": 298.5
   },
   "right": {
     "id": "720a14b719264f15",
@@ -186,11 +199,15 @@
       "vim-toggle:Toggle Vim Mode": false
     }
   },
-  "active": "df04d44643792ee4",
+  "active": "28037977a7ca366c",
   "lastOpenFiles": [
+    "2025-10-15_d/d.md",
+    "2025-10-15_seinsfrage/seinsfrage.md",
+    "2025-10-15_d",
+    "2025-10-01_subtyping/subtyping.md",
+    "2025-10-15_seinsfrage",
     "我是如何搭建此博客的.md",
     "2025-09-11_how to enhance voice recordings/how to enhance voice recordings.md",
-    "2025-10-01_subtyping/subtyping.md",
     "2025-10-01_subtyping",
     "录音处理（人声、降噪、转录）.md",
     "2025-09-11_how to enhance voice recordings",
@@ -207,8 +224,6 @@
     "2025-09-06_anotherblog/anotherblog.md",
     "2025-09-06_ab",
     "2025-09-06_another/another.md",
-    "2025-09-06_anotherblog",
-    "2025-09-06_another",
     "tmp2 1.md",
     "tmp2.md",
     "2025-09-06-hello.md",
@@ -221,7 +236,6 @@
     "2025-09-06_slug/slug1.md",
     "2025-09-06_slug/slug.md",
     "obs_sctipts/NewBlog.js.md",
-    "obs_sctipts/template.md",
-    "template.md"
+    "obs_sctipts/template.md"
   ]
 }
